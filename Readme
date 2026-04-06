@@ -1,0 +1,51 @@
+PROYECTO: Prueba de Performance API Login
+
+Este proyecto implementa una prueba de carga sobre el endpoint de autenticación de la API FakeStore utilizando Apache JMeter.
+
+HERRAMIENTAS UTILIZADAS:
+
+-Apache JMeter 5.5
+Plugins:
+-Custom Thread Group (bzm - Concurrency Thread Group)
+-Throughput Shaping Timer (jp@gc)
+REQUISITOS PREVIOS:
+
+-Tener instalado Apache JMeter 5.5
+-Tener instalado el Plugin Manager de JMeter
+-Instalar los plugins mencionados
+ESTRUCTURA DEL PROYECTO:
+
+    /test → archivo .jmx
+    /data → archivo archivo.csv
+    /reports → resultados y evidencias
+    README.txt
+    conclusiones.txt
+EJECUCIÓN PASO A PASO:
+
+-Abrir Apache JMeter
+-Cargar el archivo login_test.jmx
+-Verificar la ruta del archivo CSV (archivo.csv)
+Validar configuración:
+
+    Concurrency Thread Group:
+    Target Concurrency: 25
+    Ramp-Up: 10 segundos
+    Duración: 60 segundos
+    Throughput Shaping Timer:
+    20 Requests por segundo durante 60 segundos
+Ejecutar la prueba
+
+    -Visualizar resultados en Aggregate Report
+
+ESCENARIO DE PRUEBA:
+- Tipo: Prueba de carga
+- TPS objetivo: 20 solicitudes por segundo
+- Duración: 60 segundos
+- Usuarios concurrentes: 25
+CRITERIOS DE ACEPTACIÓN:
+- Tiempo de respuesta ≤ 1.5 segundos (percentil 95)
+- Tasa de error < 3%
+- Throughput aproximado de 20 TPS
+NOTAS:
+-Se utilizó Throughput Shaping Timer para garantizar un control preciso del throughput.
+-Se utilizó Concurrency Thread Group para asegurar la disponibilidad de usuarios concurrentes.

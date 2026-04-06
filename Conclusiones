@@ -1,0 +1,25 @@
+CONCLUSIONES:
+
+Se ejecutó una prueba de carga sobre el endpoint de autenticación con un objetivo de 20 transacciones por segundo (TPS) durante 60 segundos, utilizando Apache JMeter.
+
+RESULTADOS:
+
+* El throughput alcanzado fue de 18.88 TPS, aproximándose al objetivo definido de 20 TPS.
+* El percentil 95 del tiempo de respuesta fue de 532 ms, cumpliendo ampliamente el SLA establecido (<1.5s).
+* La tasa de error fue de 0.768%, manteniéndose dentro del umbral aceptable (<3%).
+
+ANÁLISIS:
+
+* El comportamiento es estable bajo carga, manteniendo tiempos de respuesta consistentes y una baja tasa de error.
+* Se visualiza una ligera desviación en el throughput puede atribuirse a factores como la latencia del servicio externo o la variabilidad del entorno de prueba.
+* No se evidencian síntomas de saturación ni degradación significativa del rendimiento.
+
+RECOMENDACIONES:
+
+* Incrementar ligeramente la concurrencia para alcanzar de forma más precisa los 20 TPS requeridos.
+* Ejecutar pruebas en un entorno controlado para reducir la variabilidad de resultados.
+* Realizar pruebas de estrés para determinar el límite de capacidad del sistema.
+
+CONCLUSIÓN FINAL:
+
+Se cumple con los criterios de tiempo de respuesta y tasa de error establecidos. El throughput alcanzado es cercano al objetivo definido, evidenciando que se puede soportar la carga planteada con un margen mínimo de desviación.
